@@ -1,33 +1,31 @@
 <div class="container">
   <h1>Gives</h1>
 
-<%= form_tag(gives_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<%= submit_tag "검색" %>
-<%end%>
+  <%= form_tag(gives_path, :method => "get", id: "search-form", class: "form-inline") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: "form-control" %>
+    <%= submit_tag "검색", class: "btn btn-outline-success my-2 my-sm-0 search-btn" %>
+  <%end%>
 
-<table>
-  <thead>
-    <tr>
-      <th>No</th>
-      <th>title</th>
-      <th>name</th>
-      <th>image</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @gives.each do |gife| %>
-      <tr>
-        <td><%= gife.id %></td>
-        <td><%= link_to gife.title, gife %></td>
-        <td><%= gife.name %></td>
-        <td><%= image_tag("#{gife.image.main}") %></td>
-      </tr>
-     <% end %>
-    </tbody>
-  </table>
-
+  <div class="album py-5">
+    <div class="container">
+      <div class="row">
+        <% @gives.each do |gife| %>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow card-box">
+              <%= image_tag("#{gife.image.main}") %>
+              <div class="card-body">
+                <h3><%= link_to gife.title, gife %></h3>
+                <span>by <b><%= gife.name %></b></span>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted"><%= gife.created_at.strftime("%Y-%m-%d") %></small>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <br>
 
   <%= link_to 'New Gife', new_gife_path %>

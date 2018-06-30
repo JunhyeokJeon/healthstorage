@@ -8,7 +8,17 @@
 <p>
   <strong>Content:</strong>
   <%= @gife.content %>
-</p>
+</p><br>
+            <% @gife.give_comments.each do |c|%>
+              댓글 : <%= c.content %>
+              <a href ='/give_comments/delete/<%= c.id %>'>댓글삭제</a><br>
+            <%end%><br>
+            ----------------------<br></td>
+          <form action = '/give_comments/create/<%= @gife.id %>'>
+            <input type = 'textarea' name = 'comment' placeholder = '댓글을 입력해주세요..'>
+            <input type = 'submit' value = '작성'>
+          </form>
+  
 
 <%= link_to 'Edit', edit_gife_path(@gife) %> |
 <%= link_to 'Back', gives_path %>

@@ -25,6 +25,9 @@ class TakesController < ApplicationController
   # POST /takes.json
   def create
     @take = Take.new(take_params)
+    @take.name = current_user.name
+    @take.user_id = current_user.id
+
 
     respond_to do |format|
       if @take.save

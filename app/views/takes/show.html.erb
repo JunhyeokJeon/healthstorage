@@ -19,7 +19,7 @@
 </p><br>
 
 <% @take.take_comments.each do |c|%>
-  댓글 : <%= c.content %>
+  *<%= c.user.name %> : <%= c.content %>
   <a href ='/take_comments/delete/<%= c.id %>'>댓글삭제</a><br>
 <%end%><br>
 ----------------------<br>

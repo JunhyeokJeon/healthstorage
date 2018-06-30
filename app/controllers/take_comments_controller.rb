@@ -3,6 +3,7 @@ class TakeCommentsController < ApplicationController
     @comment = TakeComment.new
     @comment.take_id = params[:take_id]
     @comment.content = params[:comment]
+    @comment.user_id = current_user.id
     @comment.save
     
     redirect_to :back

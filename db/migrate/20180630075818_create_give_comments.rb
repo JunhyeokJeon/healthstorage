@@ -3,6 +3,7 @@ class CreateGiveComments < ActiveRecord::Migration[5.0]
     create_table :give_comments do |t|
       t.string :content
       t.integer :give_id
+      t.integer :user_id
 
       t.timestamps
     end

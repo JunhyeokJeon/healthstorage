@@ -7,11 +7,18 @@ body {
   letter-spacing: -0.7px;
 }
 
-.main-navbar li a { color: white!important; }
+/* application.html.erb */
+.main-nav {
+  background: rgb(14, 77, 243);
+  padding: 20px 0;
+}
+.main-logo { width: 300px; }
+.main-nav a.mouse { color: white; font-size: 1.2em; }
+.main-nav a.mouse:hover { opacity: 0.3; }
 
 /* index.html.erb */
 .index-content {
-  padding: 50px 0;
+  padding: 70px 0;
   background-image: url('index-content-bg.png');
   width: 100%;
   height: 454px;

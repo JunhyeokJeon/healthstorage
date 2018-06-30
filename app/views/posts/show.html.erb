@@ -13,6 +13,10 @@
 <p>
   <%= link_to @post.name, profile_path(user_id: @post.user_id ) %>
 </p>
+<p>
+  <strong>사진:</strong>
+  <%= image_tag("#{@post.image.detail}") %>
+</p>
 <% @post.post_comments.each do |c|%>
   댓글 : <%= c.content %>
   <a href ='/post_comments/delete/<%= c.id %>'>댓글삭제</a>

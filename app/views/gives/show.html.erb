@@ -13,6 +13,10 @@
 <p>
   <%= link_to @gife.name, profile_path(user_id: @gife.user_id ) %>
 </p><br>
+<p>
+  <strong>사진:</strong>
+  <%= image_tag("#{@gife.image.detail}") %>
+</p><br>
 
 <% @gife.give_comments.each do |c|%>
   댓글 : <%= c.content %>

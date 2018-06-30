@@ -14,18 +14,9 @@
   <tbody>
     <% @takes.each do |take| %>
       <tr>
-<<<<<<< HEAD
-        <td><%= take.title %></td>
-        <td><%= take.content %></td>
-        <td><%= link_to 'Show', take %></td>
-        <td><%= link_to 'Edit', edit_take_path(take) %></td>
-        <td><%= link_to 'Destroy', take, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          
-=======
         <td><%= take.id %></td>
         <td><%= link_to take.title, take %></td>
         <td><%= take.name %></td>
->>>>>>> cbb0cbda7d0953ae729bcbed273d976afd73b69e
       </tr>
     <% end %>
   </tbody>

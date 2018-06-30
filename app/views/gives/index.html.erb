@@ -5,20 +5,18 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
+      <th>No</th>
+      <th>title</th>
+      <th>name</th>
     </tr>
   </thead>
 
   <tbody>
     <% @gives.each do |gife| %>
       <tr>
-        <td><%= gife.title %></td>
-        <td><%= gife.content %></td>
-        <td><%= link_to 'Show', gife %></td>
-        <td><%= link_to 'Edit', edit_gife_path(gife) %></td>
-        <td><%= link_to 'Destroy', gife, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= gife.id %></td>
+        <td><%= link_to gife.title, gife %></td>
+        <td><%= gife.name %></td>
       </tr>
     <% end %>
   </tbody>

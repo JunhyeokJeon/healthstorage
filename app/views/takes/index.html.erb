@@ -1,27 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Takes</h1>
 
-<h1>Takes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>No</th>
-      <th>title</th>
-      <th>name</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @takes.each do |take| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= take.id %></td>
-        <td><%= link_to take.title, take %></td>
-        <td><%= take.name %></td>
+        <th>No</th>
+        <th>title</th>
+        <th>name</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @takes.each do |take| %>
+        <tr>
+          <td><%= take.id %></td>
+          <td><%= link_to take.title, take %></td>
+          <td><%= take.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Take', new_take_path %>
+  <br>
+
+  <%= link_to 'New Take', new_take_path %>
+</div>

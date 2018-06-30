@@ -1,20 +1,18 @@
 <div class="container">
-  <h1>Posts</h1>
-
-  <table>
-    <thead>
+  <h1 class="display-4">Posts</h1>
+  <hr class="my-4">
+  <table class="table">
+    <thead class="thead-dark">
       <tr>
         <th>No.</th>
         <th>title</th>
         <th>name</th>
-
       </tr>
     </thead>
-
     <tbody>
       <% @posts.each do |post| %>
         <tr>
-          <td><%= post.id %></td>
+          <td scope="row"><%= post.id %></td>
           <td><%= link_to post.title, post %></td>
           <td><%= post.name %></td>
 
@@ -22,8 +20,8 @@
       <% end %>
     </tbody>
   </table>
-
   <br>
 
-  <%= link_to 'New Post', new_post_path %>
+  <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
+
 </div>

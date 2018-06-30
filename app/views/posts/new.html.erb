@@ -1,5 +1,13 @@
-<h1>New Post</h1>
+<div class="container">
 
-<%= render 'form', post: @post %>
+  <div class="card">
+    <div class="card-header">
+      <h1>New Post</h1>
+    </div>
 
-<%= link_to 'Back', posts_path %>
+    <div class="card-body">
+      <%= render 'form', post: @post %>
+      <%= link_to 'Back', posts_path %>
+    </div>
+  </div>
+</div>

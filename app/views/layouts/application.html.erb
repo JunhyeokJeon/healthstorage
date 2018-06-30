@@ -50,9 +50,13 @@
         </div>
       </div>
     </nav>
+
     <%= yield %>
-      <p id="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+    <div class="container">
+      <div class="alert"><%= notice %></div>
+      <div class="alert"><%= alert %></div>
+    </div>
 
     <div class="footer">
       <div class="container">

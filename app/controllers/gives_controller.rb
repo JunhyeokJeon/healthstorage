@@ -1,12 +1,12 @@
 class GivesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :create]
   before_action :set_gife, only: [:show, :edit, :update, :destroy, :endd]
-  
+
   def endd
     @gife.endd = true
     @gife.save
-    
-    redirect_to :back
+
+    redirect_to '/gives'
   end
 
   # GET /gives
@@ -41,7 +41,7 @@ class GivesController < ApplicationController
     @gife.name = current_user.name
     @gife.user_id = current_user.id
     @gife.endd = false
-    
+
 
     respond_to do |format|
       if @gife.save
@@ -88,6 +88,6 @@ class GivesController < ApplicationController
     def gife_params
       params.require(:give).permit(:title, :content, :image)
     end
-    
-    
+
+
 end

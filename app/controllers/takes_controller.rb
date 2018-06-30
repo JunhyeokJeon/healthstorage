@@ -27,10 +27,10 @@ class TakesController < ApplicationController
   end
 
   def endd
-    
+
     @take.endd = true
     @take.save
-    redirect_to :back
+    redirect_to '/takes'
   end
 
   # POST /takes
@@ -39,7 +39,7 @@ class TakesController < ApplicationController
     @take = Take.new(take_params)
     @take.name = current_user.name
     @take.user_id = current_user.id
-    @take.endd = false 
+    @take.endd = false
 
 
     respond_to do |format|

@@ -8,6 +8,16 @@ body {
 }
 .container { padding: 20px 0; }
 
+/* common of index.html.erb */
+.card-box {
+  overflow: hidden;
+  border-radius: 2%;
+}
+.card-bod image {
+  width: 100%;
+}
+.search-btn { margin-left: 5px; }
+
 /* comments */
 #comments {
 	h2 {

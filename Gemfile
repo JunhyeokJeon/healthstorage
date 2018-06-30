@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Installed gem do
+gem 'rails_db'
 gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 gem 'devise'
 gem 'rails', '~> 5.0.7'

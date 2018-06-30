@@ -25,6 +25,8 @@ class GivesController < ApplicationController
   # POST /gives.json
   def create
     @gife = Give.new(gife_params)
+    @gife.name = current_user.name
+    @gife.user_id = current_user.id
 
     respond_to do |format|
       if @gife.save

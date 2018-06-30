@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Gives</h1>
 
-<h1>Gives</h1>
+
 
 <table>
   <thead>
@@ -19,18 +19,7 @@
         <td><%= link_to gife.title, gife %></td>
         <td><%= gife.name %></td>
       </tr>
-    </thead>
-
-    <tbody>
-      <% @gives.each do |gife| %>
-        <tr>
-          <td><%= gife.title %></td>
-          <td><%= gife.content %></td>
-          <td><%= link_to 'Show', gife %></td>
-          <td><%= link_to 'Edit', edit_gife_path(gife) %></td>
-          <td><%= link_to 'Destroy', gife, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
+     <% end %>
     </tbody>
   </table>
 

@@ -1,5 +1,5 @@
 class TakesController < ApplicationController
-  before_action :set_take, only: [:show, :edit, :update, :destroy, :end]
+  before_action :set_take, only: [:show, :edit, :update, :destroy, :endd]
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :create]
   # GET /takes
   # GET /takes.json
@@ -26,9 +26,9 @@ class TakesController < ApplicationController
   def edit
   end
 
-  def end
+  def endd
     
-    @take.end = true
+    @take.endd = true
     @take.save
     redirect_to :back
   end
@@ -39,7 +39,7 @@ class TakesController < ApplicationController
     @take = Take.new(take_params)
     @take.name = current_user.name
     @take.user_id = current_user.id
-    @take.end = false 
+    @take.endd = false 
 
 
     respond_to do |format|

@@ -5,6 +5,7 @@ class CreateGives < ActiveRecord::Migration[5.0]
       t.text :content
       t.string :name
       t.integer :user_id
+      t.boolean :endd
 
       t.timestamps
     end

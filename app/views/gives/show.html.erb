@@ -22,7 +22,7 @@
             <strong>username</strong>
             </p>
           <p class="comment_body">
-          <%= c.content %>
+          <%=c.user.name%>:<%= c.content %>
           </p><br>
           <p>
             <a href ='/give_comments/delete/<%= c.id %>'>삭제</a>
@@ -39,8 +39,11 @@
 <input type = 'textarea' name = 'comment' placeholder = '댓글을 입력해주세요..'>
 <input type = 'submit' value = '작성' class="btn btn-primary">
 </form>
-  
 
-<%= link_to 'Edit', edit_gife_path(@gife) %> |
+<% if current_user.id == @gife.user_id %>
+  <%= link_to 'Edit', edit_gife_path(@gife) %>
+  <%= link_to '대여완료', give_end_path(@gife)%>
+<%end%>
+
 <%= link_to 'Back', gives_path %>
 </div>

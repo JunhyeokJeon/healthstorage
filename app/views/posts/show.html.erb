@@ -23,7 +23,7 @@
             <strong>username</strong>
           </p>
           <p class="comment_body">
-            <%= c.content %>
+           * <%=c.user.name%> : <%= c.content %>
           </p><br>
           <p>
             <a href ='/post_comments/delete/<%= c.id %>' class="btn btn-primary">삭제</a>

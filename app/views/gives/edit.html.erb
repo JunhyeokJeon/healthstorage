@@ -1,6 +1,13 @@
-<h1>Editing Gife</h1>
+<div class="container edit-container">
+  <div class="card">
+    <div class="card-header">
+      <h1>빌려드려요</h1>
+    </div>
+    <div class="card-body">
+      <%= render 'form', gife: @gife %>
 
-<%= render 'form', gife: @gife %>
-
-<%= link_to 'Show', @gife %> |
-<%= link_to 'Back', gives_path %>
+      <%= link_to 'Show', @gife %> |
+      <%= link_to 'Back', gives_path %>
+    </div>
+  </div>
+</div>

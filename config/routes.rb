@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get 'profile/:user_id' => 'home#profile', as: 'profile'
+  
+  get 'gives/:id/endd' =>'gives#endd', as: 'give_end'
 
   get 'takes/:id/endd' => 'takes#endd', as: 'take_end'
   root 'home#index'

@@ -1,20 +1,25 @@
-<p id="notice"><%= notice %></p>
-  <div class="card">
+<div class="container">
+  <div class="card card-posts">
     <div class="card-header">
-     <h2>Title:</h2>
-     <p><%= @gife.title %></p>
-     <h2>Content:</h2>
-     <p><%= @gife.content %></p>
-     <h2>User</h2>
-     <p><%= link_to @gife.name, profile_path(user_id: @gife.user_id ) %></p>
+      <h2>Title</h2>
+      <p><%= @gife.title %></p>
+      <h2>User</h2>
+      <p><%= link_to @gife.name, profile_path(user_id: @gife.user_id ) %></p>
     </div>
     <div class="card-body">
-     <h2>사진:</h2>
-     <p><%= image_tag("#{@gife.image.detail}") %></p>
+      <h2>Content</h2>
+      <p><%= @gife.content %></p>
+      <br>
+      <p><%= image_tag("#{@gife.image.detail}") %></p>
+      <br><br>
+      <% if current_user.id == @gife.user_id %>
+        <%= link_to 'Edit', edit_gife_path(@gife), class: "btn btn-primary" %>
+      <% end %>
+      <%= link_to 'Back', gives_path, class: "btn btn-primary" %>
+    </div>
   </div>
-</div>
 
-<% @gife.give_comments.each do |c|%>
+  <% @gife.give_comments.each do |c|%>
     <div id="comments">
       <div class="comment clearfix">
         <div class="comment_content">
@@ -22,7 +27,7 @@
             <strong>username</strong>
             </p>
           <p class="comment_body">
-          <%= c.content %>
+          <%=c.user.name%>:<%= c.content %>
           </p><br>
           <p>
             <a href ='/give_comments/delete/<%= c.id %>'>삭제</a>
@@ -30,18 +35,19 @@
         </div>
       </div>
     </div>
-    
-<%end%>
-<br>
-<br>
+  <%end%>
+  <br>
+  <br>
 
 <form action = '/give_comments/create/<%= @gife.id %>'>
 <input type = 'textarea' name = 'comment' placeholder = '댓글을 입력해주세요..'>
 <input type = 'submit' value = '작성' class="btn btn-primary">
 </form>
-  
+
 <% if current_user.id == @gife.user_id %>
   <%= link_to 'Edit', edit_gife_path(@gife) %>
-<% end%>
+  <%= link_to '대여완료', give_end_path(@gife)%>
+<%end%>
+
 <%= link_to 'Back', gives_path %>
 </div>

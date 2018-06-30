@@ -1,5 +1,4 @@
 @import "bootstrap";
-
 @import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
 
 body {
@@ -23,9 +22,7 @@ body {
   color: #888!important;
   text-decoration: none;
 }
-.card-box .card-body h3 a:hover {
-  opacity: 0.3;
-}
+.card-box .card-body h3 a:hover { opacity: 0.3; }
 .card-posts { width: 70%; margin: 0 auto; margin-top: 17px; }
 .search-btn { margin-left: 5px; }
 .index-card-container { margin-top: -40px; }

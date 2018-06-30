@@ -5,6 +5,7 @@ class CreateTakes < ActiveRecord::Migration[5.0]
       t.text :content
       t.string :name
       t.integer :user_id
+      t.boolean :end
 
       t.timestamps
     end

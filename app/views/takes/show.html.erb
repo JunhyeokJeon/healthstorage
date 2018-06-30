@@ -27,7 +27,10 @@
     <input type = 'submit' value = '작성'>
   </form>
 
+  <% if current_user.id == @take.user_id %>
+    <%= link_to 'Edit', edit_take_path(@take) %> 
+    <%= link_to '완료', take_end_path(@take)%>
 
-  <%= link_to 'Edit', edit_take_path(@take) %> |
+  <% end %>
   <%= link_to 'Back', takes_path %>
 </div>

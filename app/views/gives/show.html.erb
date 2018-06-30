@@ -28,6 +28,7 @@
 <input type = 'submit' value = '작성'>
 </form>
   
-
-<%= link_to 'Edit', edit_gife_path(@gife) %> |
+<% if current_user.id == @gife.user_id %>
+  <%= link_to 'Edit', edit_gife_path(@gife) %>
+<% end%>
 <%= link_to 'Back', gives_path %>

@@ -1,6 +1,6 @@
 class GivesController < ApplicationController
   before_action :set_gife, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :create]
   # GET /gives
   # GET /gives.json
   def index

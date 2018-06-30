@@ -1,6 +1,6 @@
 class TakesController < ApplicationController
-  before_action :set_take, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_take, only: [:show, :edit, :update, :destroy, :end]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :create]
   # GET /takes
   # GET /takes.json
   def index
@@ -26,12 +26,20 @@ class TakesController < ApplicationController
   def edit
   end
 
+  def end
+    
+    @take.end = true
+    @take.save
+    redirect_to :back
+  end
+
   # POST /takes
   # POST /takes.json
   def create
     @take = Take.new(take_params)
     @take.name = current_user.name
     @take.user_id = current_user.id
+    @take.end = false 
 
 
     respond_to do |format|

@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20180630130103) do
   create_table "give_comments", force: :cascade do |t|
     t.string   "content"
     t.integer  "give_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20180630130103) do
   create_table "post_comments", force: :cascade do |t|
     t.string   "content"
     t.integer  "post_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,6 +51,7 @@ ActiveRecord::Schema.define(version: 20180630130103) do
   create_table "take_comments", force: :cascade do |t|
     t.string   "content"
     t.integer  "take_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,6 +61,7 @@ ActiveRecord::Schema.define(version: 20180630130103) do
     t.text     "content"
     t.string   "name"
     t.integer  "user_id"
+    t.boolean  "end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"

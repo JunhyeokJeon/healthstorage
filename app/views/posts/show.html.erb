@@ -12,7 +12,9 @@
       <br>
       <p><%= image_tag("#{@post.image.detail}") %></p>
       <br><br>
-      <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary" %>
+      <% if current_user.id == @post.user_id %>
+        <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary" %>
+      <%end%>
       <%= link_to 'Back', posts_path, class: "btn btn-primary" %>
     </div>
   </div>

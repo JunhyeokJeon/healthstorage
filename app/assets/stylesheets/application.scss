@@ -32,7 +32,8 @@ body {
   margin-top: 15px;
   margin-bottom: -150px;
 }
-.btn-index { margin-top: -170px; }
+.btn-index { margin-bottom: 50px; z-index: 4; position: relative; }
+.index-album-box { margin-bottom: -70px; z-index: 1; position: relative; }
 
 /* takes > index.html.erb*/
 .post-table { margin-top: 10px; }

@@ -6,7 +6,7 @@
     <%= submit_tag "검색", class: "btn btn-outline-success my-2 my-sm-0 search-btn" %>
   <%end%>
 
-  <div class="album py-5">
+  <div class="album py-5 index-album-box">
     <div class="container index-card-container">
       <div class="row">
         <% @gives.each do |gife| %>
@@ -27,6 +27,5 @@
     </div>
   </div>
   <br>
-
   <%= link_to 'New', new_gife_path, class: "btn btn-primary btn-index" %>
 </div>

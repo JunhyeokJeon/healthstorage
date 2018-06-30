@@ -3,6 +3,7 @@ class CreateTakeComments < ActiveRecord::Migration[5.0]
     create_table :take_comments do |t|
       t.string :content
       t.integer :take_id
+      t.integer :user_id
 
       t.timestamps
     end

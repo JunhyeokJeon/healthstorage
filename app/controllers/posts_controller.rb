@@ -26,6 +26,9 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.name = current_user.name
+    @post.user_id = current_user.id
+
 
     respond_to do |format|
       if @post.save

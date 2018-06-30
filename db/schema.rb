@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20180630075925) do
   create_table "gives", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,6 +38,8 @@ ActiveRecord::Schema.define(version: 20180630075925) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,6 +54,8 @@ ActiveRecord::Schema.define(version: 20180630075925) do
   create_table "takes", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

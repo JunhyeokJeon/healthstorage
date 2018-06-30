@@ -8,6 +8,7 @@
 <p>
   <strong>Content:</strong>
   <%= @take.content %>
+<<<<<<< HEAD
 </p><br>
           <% @take.take_comments.each do |c|%>
             댓글 : <%= c.content %>
@@ -18,6 +19,12 @@
             <input type = 'textarea' name = 'comment' placeholder = '댓글을 입력해주세요..'>
             <input type = 'submit' value = '작성'>
           </form>
+=======
+</p>
+<p>
+  <%= link_to @take.name, profile_path(user_id: @take.user_id ) %>
+</p>
+>>>>>>> cbb0cbda7d0953ae729bcbed273d976afd73b69e
 
 <%= link_to 'Edit', edit_take_path(@take) %> |
 <%= link_to 'Back', takes_path %>

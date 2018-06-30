@@ -1,46 +1,35 @@
-<div class="container">
-  <div class="card card-posts">
-    <div class="card-header">
-      <h2>Title</h2>
-      <p><%= @gife.title %></p>
-      <h2>User</h2>
-      <p><%= link_to @gife.name, profile_path(user_id: @gife.user_id ) %></p>
-    </div>
-    <div class="card-body">
-      <h2>Content</h2>
-      <p><%= @gife.content %></p>
-      <br>
-      <p><%= image_tag("#{@gife.image.detail}") %></p>
-      <br><br>
-      <% if current_user.id == @gife.user_id %>
-        <%= link_to 'Edit', edit_gife_path(@gife), class: "btn btn-primary" %>
-      <% end %>
-      <%= link_to 'Back', gives_path, class: "btn btn-primary" %>
-    </div>
-  </div>
+<p id="notice"><%= notice %></p>
 
-  <% @gife.give_comments.each do |c|%>
-    <div id="comments">
-      <div class="comment clearfix">
-        <div class="comment_content">
-          <p class="comment_name">
-            <strong>username</strong>
-            </p>
-          <p class="comment_body">
-          <%= c.content %>
-          </p><br>
-          <p>
-            <a href ='/give_comments/delete/<%= c.id %>'>삭제</a>
-            </p>
-        </div>
-      </div>
-    </div>
-  <%end%>
-  <br>
-  <br>
+<p>
+  <strong>Title:</strong>
+  <%= @gife.title %>
+</p>
 
-  <form action = '/give_comments/create/<%= @gife.id %>' class='comment-form-c'>
-    <input type = 'textarea' name = 'comment' placeholder = '댓글을 입력해주세요..' class="form-control"><br>
-    <input type = 'submit' value = '작성' class="btn btn-primary">
-  </form>
-</div>
+<p>
+  <strong>Content:</strong>
+  <%= @gife.content %>
+</p><br>
+
+<p>
+  <%= link_to @gife.name, profile_path(user_id: @gife.user_id ) %>
+</p><br>
+<p>
+  <strong>사진:</strong>
+  <%= image_tag("#{@gife.image.detail}") %>
+</p><br>
+
+<% @gife.give_comments.each do |c|%>
+  댓글 : <%= c.content %>
+  <a href ='/give_comments/delete/<%= c.id %>'>댓글삭제</a><br>
+<%end%><br>
+----------------------<br></td>
+<form action = '/give_comments/create/<%= @gife.id %>'>
+<input type = 'textarea' name = 'comment' placeholder = '댓글을 입력해주세요..'>
+<input type = 'submit' value = '작성'>
+</form>
+  
+<% if current_user.id == @gife.user_id %>
+  <%= link_to 'Edit', edit_gife_path(@gife) %>
+  <%= link_to '대여 완료', give_end_path(@gife)%>
+<% end%>
+<%= link_to 'Back', gives_path %>

@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20180630130103) do
     t.text     "content"
     t.string   "name"
     t.integer  "user_id"
+    t.boolean  "endd"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"
@@ -61,7 +62,7 @@ ActiveRecord::Schema.define(version: 20180630130103) do
     t.text     "content"
     t.string   "name"
     t.integer  "user_id"
-    t.boolean  "end"
+    t.boolean  "endd"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"

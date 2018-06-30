@@ -12,8 +12,12 @@
       <br>
       <%= image_tag("#{@take.image.detail}") %>
       <br><br>
-      <%= link_to 'Edit', edit_take_path(@take), class: "btn btn-primary" %>
-      <%= link_to 'Back', takes_path, class: "btn btn-primary" %>
+      <% if current_user.id == @take.user_id %>
+        <%= link_to 'Edit', edit_take_path(@take), class: "btn btn-primary" %>
+        <%= link_to '대여완료', take_end_path(@take), class: "btn btn-primary"%>
+      <% end%>  
+        <%= link_to 'Back', takes_path, class: "btn btn-primary" %>
+      
     </div>
   </div>
 

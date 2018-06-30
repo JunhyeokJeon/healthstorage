@@ -8,7 +8,16 @@
 <p>
   <strong>Content:</strong>
   <%= @take.content %>
-</p>
+</p><br>
+          <% @take.take_comments.each do |c|%>
+            댓글 : <%= c.content %>
+            <a href ='/take_comments/delete/<%= c.id %>'>댓글삭제</a><br>
+          <%end%><br>
+          ----------------------<br></td>
+          <form action = '/take_comments/create/<%= @take.id %>'>
+            <input type = 'textarea' name = 'comment' placeholder = '댓글을 입력해주세요..'>
+            <input type = 'submit' value = '작성'>
+          </form>
 
 <%= link_to 'Edit', edit_take_path(@take) %> |
 <%= link_to 'Back', takes_path %>

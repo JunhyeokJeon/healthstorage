@@ -3,6 +3,7 @@ class CreateTakes < ActiveRecord::Migration[5.0]
     create_table :takes do |t|
       t.string :title
       t.text :content
+      t.string :name
 
       t.timestamps
     end

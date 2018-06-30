@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20180630071212) do
     t.string   "title"
     t.text     "content"
     t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 20180630071212) do
     t.string   "title"
     t.text     "content"
     t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180630071212) do
     t.string   "title"
     t.text     "content"
     t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

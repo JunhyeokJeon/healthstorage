@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'home/index'
 
-
+  get 'profile/:user_id' => 'home#profile', as: 'profile'
 
   root 'home#index'
   resources :posts

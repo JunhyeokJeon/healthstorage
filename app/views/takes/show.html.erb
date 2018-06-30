@@ -9,6 +9,9 @@
   <strong>Content:</strong>
   <%= @take.content %>
 </p>
+<p>
+  <%= link_to @take.name, profile_path(user_id: @take.user_id ) %>
+</p>
 
 <%= link_to 'Edit', edit_take_path(@take) %> |
 <%= link_to 'Back', takes_path %>

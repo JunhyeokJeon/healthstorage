@@ -1,13 +1,13 @@
-<div class="container">
-  <h1>Gives</h1>
+<div class="container index-top-container">
+  <h1>빌려드려요</h1>
 
   <%= form_tag(gives_path, :method => "get", id: "search-form", class: "form-inline") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: "form-control" %>
     <%= submit_tag "검색", class: "btn btn-outline-success my-2 my-sm-0 search-btn" %>
   <%end%>
 
-  <div class="album py-5">
-    <div class="container">
+  <div class="album py-5 index-album-box">
+    <div class="container index-card-container">
       <div class="row">
         <% @gives.each do |gife| %>
           <div class="col-md-4">
@@ -30,6 +30,5 @@
     </div>
   </div>
   <br>
-
-  <%= link_to 'New Gife', new_gife_path %>
+  <%= link_to 'New', new_gife_path, class: "btn btn-primary btn-index" %>
 </div>

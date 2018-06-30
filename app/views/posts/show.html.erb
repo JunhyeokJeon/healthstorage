@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card">
+  <div class="card card-posts">
     <div class="card-header">
       <h2>Title</h2>
       <p><%= @post.title %></p>
@@ -11,6 +11,11 @@
       <p><%= @post.content %></p>
       <br>
       <p><%= image_tag("#{@post.image.detail}") %></p>
+      <br><br>
+      <% if current_user.id == @post.user_id %>
+        <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary" %>
+      <%end%>
+      <%= link_to 'Back', posts_path, class: "btn btn-primary" %>
     </div>
   </div>
 
@@ -26,25 +31,17 @@
            * <%=c.user.name%> : <%= c.content %>
           </p><br>
           <p>
-            <a href ='/post_comments/delete/<%= c.id %>' class="btn btn-primary">삭제</a>
+            <a href='/post_comments/delete/<%= c.id %>' class="btn btn-primary">삭제</a>
           </p>
         </div>
       </div>
     </div>
-
   <%end%>
   <br>
   <br>
 
-  <form action = '/post_comments/create/<%= @post.id %>'>
+  <form action='/post_comments/create/<%= @post.id %>' class='comment-form-c'>
     <input type='textarea' name='comment' placeholder='댓글을 입력해주세요..' class="form-control"><br>
     <input type='submit' value='작성' class="btn btn-primary">
   </form>
-
-  <!-- <p>
-    <%= link_to @post.name, profile_path(user_id: @post.user_id ) %>
-  </p> -->
-
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Back', posts_path %>
 </div>

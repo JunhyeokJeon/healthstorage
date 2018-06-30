@@ -1,4 +1,5 @@
 class GivesController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :create]
   before_action :set_gife, only: [:show, :edit, :update, :destroy, :endd]
   
   def endd
@@ -7,7 +8,6 @@ class GivesController < ApplicationController
     
     redirect_to :back
   end
-  
 
   # GET /gives
   # GET /gives.json

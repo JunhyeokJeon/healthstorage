@@ -1,6 +1,12 @@
 <div class="container">
-  <h1>New Gife</h1>
+  <div class="card">
+    <div class="card-header">
+      <h1>New Gife</h1>
+    </div>
 
-  <%= render 'form', gife: @gife %>
-  <%= link_to 'Back', gives_path %>
+    <div class="card-body">
+      <%= render 'form', gife: @gife %>
+      <%= link_to 'Back', gives_path %>
+    </div>
+  </div>
 </div>

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   
   get 'gives/:id/endd' =>'gives#endd', as: 'give_end'
 
+  get 'takes/:id/end' => 'takes#end', as: 'take_end'
   root 'home#index'
   resources :posts
   resources :takes

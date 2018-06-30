@@ -21,13 +21,29 @@
             <li class="nav-item active">
               <a class="nav-link" href="<%= gives_path %>">빌려드려요</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="<%= takes_path %>">빌려요</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="<%= posts_path %>">자유게시판</a>
             </li>
           </ul>
+          <% if user_signed_in? %>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" data-method="delete" href="<%= destroy_user_session_path %>">로그아웃</a>
+              </li>
+            </ul>
+          <% elsif %>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="<%= new_user_session_path %>">로그인</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="<%= new_user_registration_path %>">회원가입</a>
+              </li>
+            </ul>
+          <% end %>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 btn-main-search" type="submit">Search</button>
@@ -35,8 +51,11 @@
         </div>
       </div>
     </nav>
+
     <div class="container">
       <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     </div>
   </body>
 </html>

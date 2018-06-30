@@ -1,6 +1,12 @@
 <div class="container">
   <h1 class="display-4">Posts</h1>
   <hr class="my-4">
+  
+  <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+    <%= submit_tag "검색" %>
+  <%end%>
+
   <table class="table">
     <thead class="thead-dark">
       <tr>

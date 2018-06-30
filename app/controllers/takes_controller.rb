@@ -5,6 +5,11 @@ class TakesController < ApplicationController
   # GET /takes.json
   def index
     @takes = Take.all
+    if params[:search]
+      @takes = Take.search(params[:search]).order("created_at DESC")
+    else
+      @takes = Take.all.order('created_at DESC')
+    end
   end
 
   # GET /takes/1
@@ -72,6 +77,6 @@ class TakesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def take_params
-      params.require(:take).permit(:title, :content)
+      params.require(:take).permit(:title, :content, :image)
     end
 end

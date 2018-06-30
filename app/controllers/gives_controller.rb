@@ -5,6 +5,11 @@ class GivesController < ApplicationController
   # GET /gives.json
   def index
     @gives = Give.all
+    if params[:search]
+      @gives = Give.search(params[:search]).order("created_at DESC")
+    else
+      @gives = Give.all.order('created_at DESC')
+    end
   end
 
   # GET /gives/1
@@ -71,6 +76,6 @@ class GivesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gife_params
-      params.require(:give).permit(:title, :content)
+      params.require(:give).permit(:title, :content, :image)
     end
 end

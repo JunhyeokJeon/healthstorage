@@ -3,12 +3,14 @@
     <div class="card-header">
       <h2>Title</h2>
       <p><%= @post.title %></p>
+      <h2>User</h2>
+      <p><%= link_to @post.name, profile_path(user_id: @post.user_id ) %></p>
     </div>
     <div class="card-body">
       <h2>Content</h2>
       <p><%= @post.content %></p>
       <br>
-      image
+      <p><%= image_tag("#{@post.image.detail}") %></p>
     </div>
   </div>
 

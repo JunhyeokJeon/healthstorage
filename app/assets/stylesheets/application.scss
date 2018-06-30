@@ -16,6 +16,22 @@ body {
 .main-nav a.mouse { color: white; font-size: 1.2em; }
 .main-nav a.mouse:hover { opacity: 0.3; }
 
+.footer {
+  width: 100%;
+  height: auto;
+  background: rgb(14, 77, 243);
+}
+.footer-box { width: 100%; padding: 10px 0; box-sizing: border-box;}
+.footer-top-inner { width: 50%; display: block; float: left; }
+.footer-top .footer-logo { padding-top: 10px; display: block; float: right; width: 200px; }
+.footer-top .footer-nav li { padding-top: 25px; width: 85px; display: block; float: left; }
+.footer-top .footer-nav { list-style: none; float: left; }
+.footer-nav a { color: white!important; text-decoration: none!important; }
+.footer-nav a:hover { opacity: 0.3!important; }
+.footer-top .footer-nav:after { content: ""; clear: both; display: block; }
+.footer-box:after { content: ""; clear: both; display: block; }
+.footer-bottom p { text-align: center; color: white; font-weight: lighter; font-size: 0.8em; }
+
 /* index.html.erb */
 .index-content {
   padding: 70px 0;

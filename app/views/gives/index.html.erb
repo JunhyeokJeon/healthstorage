@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Gives</h1>
 
 <h1>Gives</h1>
 
@@ -18,10 +19,22 @@
         <td><%= link_to gife.title, gife %></td>
         <td><%= gife.name %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @gives.each do |gife| %>
+        <tr>
+          <td><%= gife.title %></td>
+          <td><%= gife.content %></td>
+          <td><%= link_to 'Show', gife %></td>
+          <td><%= link_to 'Edit', edit_gife_path(gife) %></td>
+          <td><%= link_to 'Destroy', gife, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Gife', new_gife_path %>
+  <br>
+
+  <%= link_to 'New Gife', new_gife_path %>
+</div>

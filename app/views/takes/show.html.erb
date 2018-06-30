@@ -4,7 +4,7 @@
       <h2>Title</h2>
       <p><%= @take.title %></p>
       <h2>User</h2>
-      <p><%= @take.name %></p>
+      <p><%= link_to @take.name, profile_path(user_id: @take.user_id ) %></p>
     </div>
     <div class="card-body">
       <h2>Content</h2>
@@ -41,7 +41,4 @@
     <input type='textarea' name='comment' placeholder='댓글을 입력해주세요..' class="form-control"><br>
     <input type='submit' value='작성' class="btn btn-primary">
   </form>
-
-
-
 </div>

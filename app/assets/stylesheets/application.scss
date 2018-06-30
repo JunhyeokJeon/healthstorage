@@ -8,6 +8,10 @@ body {
 }
 .container { padding: 20px 0; }
 
+/* etc */
+.edit-container { margin-top: 20px; }
+.index-top-post-container { margin-top: 15px; margin-bottom: -50px; }
+
 /* common of index.html.erb */
 .card-box {
   overflow: hidden;
@@ -23,6 +27,12 @@ body {
 }
 .card-posts { width: 70%; margin: 0 auto; margin-top: 17px; }
 .search-btn { margin-left: 5px; }
+.index-card-container { margin-top: -40px; }
+.index-top-container {
+  margin-top: 15px;
+  margin-bottom: -150px;
+}
+.btn-index { margin-top: -170px; }
 
 /* takes > index.html.erb*/
 .post-table { margin-top: 10px; }
@@ -79,7 +89,7 @@ body {
   background: rgb(14, 77, 243);
   padding: 0;
 }
-.main-logo { width: 300px; }
+.main-logo { width: 300px; margin-right: 20px; }
 .main-nav a.mouse { color: white; font-size: 1.2em; }
 .main-nav a.mouse:hover { opacity: 0.3; }
 
@@ -110,6 +120,6 @@ body {
   letter-spacing: -0.7px;
 }
 .index-content .impact { color: rgb(14, 77, 243); }
-
 .index-article { padding: 30px 0; }
 .index-article h5 { color: rgb(86, 86, 86); }
+.home-article-container { margin-top: -30px; }

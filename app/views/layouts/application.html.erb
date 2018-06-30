@@ -9,8 +9,49 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg main-nav">
+      <div class="container">
+
+        <a href="<%= root_path %>">
+          <%= image_tag "logo.png", class: "main-logo" %>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto main-nav">
+            <li class="nav-item active">
+              <a class="nav-link mouse" href="<%= gives_path %>">빌려드려요</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link mouse" href="<%= takes_path %>">빌려요</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link mouse" href="<%= posts_path %>">자유게시판</a>
+            </li>
+          </ul>
+          <% if user_signed_in? %>
+            <ul class="navbar-nav mr-right">
+              <li class="nav-item active">
+                <a class="nav-link" data-method="delete" href="<%= destroy_user_session_path %>">로그아웃</a>
+              </li>
+            </ul>
+          <% elsif %>
+            <ul class="navbar-nav mr-right">
+              <li class="nav-item active">
+                <a class="nav-link mouse" href="<%= new_user_session_path %>">로그인</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link mouse" href="<%= new_user_registration_path %>">회원가입</a>
+              </li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
     <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>

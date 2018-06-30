@@ -69,6 +69,6 @@ class GivesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gife_params
-      params.require(:gife).permit(:title, :content)
+      params.require(:give).permit(:title, :content)
     end
 end

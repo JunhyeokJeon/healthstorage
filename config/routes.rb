@@ -7,13 +7,15 @@ Rails.application.routes.draw do
 
   get 'take_comments/delete/:take_comment_id'=> 'take_comments#delete'
 
-  get 'give_comments/create/give_id'=> 'give_comments#create'
+  get 'give_comments/create/:give_id'=> 'give_comments#create'
 
-  get 'give_comments/delete/give_comment_id' => 'give_comments#delete'
+  get 'give_comments/delete/:give_comment_id' => 'give_comments#delete'
   
 
   devise_for :users
   get 'home/index'
+
+
 
   root 'home#index'
   resources :posts

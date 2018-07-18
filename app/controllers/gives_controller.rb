@@ -1,5 +1,5 @@
 class GivesController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :destroy, :create]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_gife, only: [:show, :edit, :update, :destroy, :endd]
 
   def endd

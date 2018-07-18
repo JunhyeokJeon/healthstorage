@@ -12,12 +12,13 @@
       <br>
       <%= image_tag("#{@gife.image.detail}") %>
       <br><br>
-      <% if current_user.id == @gife.user_id %>
-        <%= link_to 'Edit', edit_gife_path(@gife), class: "btn btn-primary" %>
-        <%= link_to '대여완료', give_end_path(@gife), class: "btn btn-primary"%>
-      <% end%>
-        <%= link_to 'Back', gives_path, class: "btn btn-primary" %>
-
+      <% if user_signed_in? %>
+        <% if current_user.id == @gife.user_id %>
+          <%= link_to 'Edit', edit_gife_path(@gife), class: "btn btn-primary" %>
+          <%= link_to '대여완료', give_end_path(@gife), class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+      <%= link_to 'Back', gives_path, class: "btn btn-primary" %>
     </div>
   </div>
 

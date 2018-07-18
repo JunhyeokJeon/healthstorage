@@ -1,6 +1,6 @@
 class TakesController < ApplicationController
   before_action :set_take, only: [:show, :edit, :update, :destroy, :endd]
-  before_action :authenticate_user!, only: [:edit, :update, :destroy, :create]
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /takes
   # GET /takes.json
   def index
